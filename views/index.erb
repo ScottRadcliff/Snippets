@@ -7,3 +7,7 @@
 
 
 <h3>Recent Snippets</h3>
+<% @recent.each do |snippet| %>
+  <p><%= snippet['title'] %></p>
+  <%= snippet['code'] %>
+<% end %>

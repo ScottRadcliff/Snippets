@@ -1,12 +1,17 @@
 require 'sinatra/base'
 require 'mongo'
 require 'rack-flash'
-
 class App < Sinatra::Base
  enable :sessions
  use Rack::Flash
 
+ before do
+  conn = Mongo::Connection.new
+  @db = conn['snippets']
+ end
+
   get '/' do
+    @recent = @db['snippet'].find()
     erb :index
   end
 
@@ -15,11 +20,10 @@ class App < Sinatra::Base
   end
 
   post '/create' do
-    conn = Mongo::Connection.new
-    db = conn['snippets']
     record = {title: params[:title], code: params[:code]}
-    db['snippet'].save(record)
+    @db['snippet'].save(record)
     flash[:notice] = "Snippet Saved"
     redirect "/new"
   end
+  
 end
