@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'mongo'
 require 'rack-flash'
+
 class App < Sinatra::Base
  enable :sessions
  use Rack::Flash
