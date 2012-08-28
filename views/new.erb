@@ -1,0 +1,24 @@
+<% if flash[:notice] %>
+  <h1><%= flash[:notice] %></h1>
+<% end %>
+<h1 style="display: inline;">Create a new snippet</h1>
+<form action="/create" method="post" class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="title">Title</label> 
+    <div class="controls">
+      <input type="text" name="title" id="title" class="input-xlarge" placeholder="What is it?">
+    </div>
+  </div>  
+
+  <div class="control-group">
+    <label class="control-label" for="code">Code</label> 
+    <div class="controls">
+      <textarea rows="3" id="code" name="code" placeholder="Ya know, if then else and stuff..."></textarea>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="button" class="btn">Cancel</button>
+  </div>
+</form>
