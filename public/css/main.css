@@ -2,3 +2,8 @@
   background-color: #fff;
   border-top: none;
 }
+
+textarea {
+  width: 500px;
+  height: 500px;
+}

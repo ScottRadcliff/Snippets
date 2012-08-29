@@ -12,7 +12,7 @@ class App < Sinatra::Base
  end
 
   get '/' do
-    @recent = @db['snippet'].find()
+    @recent = @db['snippet'].find().sort({_id: -1})
     erb :index
   end
 
@@ -24,7 +24,7 @@ class App < Sinatra::Base
     record = {title: params[:title], code: params[:code]}
     @db['snippet'].save(record)
     flash[:notice] = "Snippet Saved"
-    redirect "/new"
+    redirect "/"
   end
   
 end
