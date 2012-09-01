@@ -1,0 +1,4 @@
+<% snippets.each do |snippet| %>
+  <p><%= snippet['title'] %></p>
+  <%= CodeFormatter.display(snippet['code']) %>
+<% end %>

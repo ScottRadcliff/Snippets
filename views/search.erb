@@ -1,11 +1,5 @@
-<form class="form-search" style="margin: 10px 0 0 0" method="get" action="search">
-  <input type="text" class="input-xxlarge search-query" name='snippets' placeholder="Search for snippets">
-  <button type="submit" class="btn">Go</button>
-</form>
+<%= partial :search_form %>
 
-<h1>Results for <em><%= @query %></em></h1>
+<h1>Results for <em><%= params[:snippets] %></em></h1>
 
-<% @results.each do |snippet| %>
-  <p><%= snippet['title'] %></p>
-  <%= CodeFormatter.display(snippet['code']) %>
-<% end %>
+<%= partial :display_snippets, :locals => {snippets: @results} %>

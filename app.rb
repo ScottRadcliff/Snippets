@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/partial'
 require 'mongo'
 require 'rack-flash'
 require './code_formatter.rb'
@@ -6,11 +7,13 @@ require './code_formatter.rb'
 class App < Sinatra::Base
  enable :sessions
  use Rack::Flash
+ register Sinatra::Partial
+ set :partial_template_engine, :erb
 
- before do
-  conn = Mongo::Connection.new
-  @db = conn['snippets']
- end
+  before do
+    conn = Mongo::Connection.new
+    @db = conn['snippets']
+  end
 
   get '/' do
     @recent = @db['snippet'].find().sort({_id: -1}).limit(10)
