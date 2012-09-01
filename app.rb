@@ -27,5 +27,11 @@ class App < Sinatra::Base
     flash[:notice] = "Snippet Saved"
     redirect "/"
   end
+
+  get '/search' do
+    @query = params[:snippets]
+    @results = @db['snippet'].find( {title: /#{@query}/i} )
+    erb :search
+  end
   
 end
