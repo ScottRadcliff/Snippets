@@ -1,5 +1,10 @@
 <h1 style="display: inline;">Snippets</h1>
 <a href="/new" class="btn" style="margin: -10px 0 0 10px">New Snippet</a>
+
+<% if flash[:notice] %>
+  <h1><%= flash[:notice] %></h1>
+<% end %>
+
 <form class="form-search" style="margin: 10px 0 0 0">
   <input type="text" class="input-xxlarge search-query" placeholder="Search for snippets">
   <button type="submit" class="btn">Go</button>
@@ -9,5 +14,6 @@
 <h3>Recent Snippets</h3>
 <% @recent.each do |snippet| %>
   <p><%= snippet['title'] %></p>
-  <%= snippet['code'] %>
+  <%= CodeFormatter.display(snippet['code']) %>
 <% end %>
+  

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'mongo'
 require 'rack-flash'
+require './code_formatter.rb'
 
 class App < Sinatra::Base
  enable :sessions
@@ -12,7 +13,7 @@ class App < Sinatra::Base
  end
 
   get '/' do
-    @recent = @db['snippet'].find().sort({_id: -1})
+    @recent = @db['snippet'].find().sort({_id: -1}).limit(10)
     erb :index
   end
 

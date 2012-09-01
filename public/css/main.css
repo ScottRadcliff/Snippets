@@ -7,3 +7,13 @@ textarea {
   width: 500px;
   height: 500px;
 }
+
+h1#new-snippet-heading {
+  display: inline;
+  margin-left: 157px;
+}
+
+
+form#snippet-form {
+  margin-top: 20px;
+}
