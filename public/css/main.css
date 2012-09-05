@@ -1,6 +1,14 @@
+/* Globals */
+.inline {display: inline;}
+
+
 .form-actions {
   background-color: #fff;
   border-top: none;
+}
+
+form#snippet-form {
+  margin-top: 20px;
 }
 
 textarea {
@@ -13,7 +21,7 @@ h1#new-snippet-heading {
   margin-left: 157px;
 }
 
+h3 {color: #BCBCBC;}
 
-form#snippet-form {
-  margin-top: 20px;
-}
+#main-heading {color: #424242;}
+#new-button {margin: -10px 0 0 10px;}

@@ -15,4 +15,4 @@ Snippets is an local application that I run to save and search common code snipp
 
 ## TODOS
 * Add syntax selection for snippets (ie Ruby, JavaScript, etc..)
-* Add RegEx searching [http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-RegularExpressions](http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-RegularExpressions)
+* <del>Add RegEx searching [http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-RegularExpressions](http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries-RegularExpressions)</del>

@@ -4,7 +4,7 @@ require 'mongo'
 require 'rack-flash'
 require './code_formatter.rb'
 
-class App < Sinatra::Base
+class SnippetApp < Sinatra::Base
  enable :sessions
  use Rack::Flash
  register Sinatra::Partial
