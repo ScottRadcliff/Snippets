@@ -15,4 +15,9 @@ class SnippetAppTest < Test::Unit::TestCase
     get '/'
     assert last_response.ok?
   end
+
+  def test_create_new_snippet
+    post '/create', {:title => "New Snippet", :code => "this is new"} 
+    assert last_response.header['location'] == "http://example.org/"
+  end
 end
