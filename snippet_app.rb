@@ -12,7 +12,11 @@ class SnippetApp < Sinatra::Base
 
   before do
     conn = Mongo::Connection.new
-    @db = conn['snippets']
+    if ENV['RACK_ENV'] == 'test'
+      @db = conn['test_snippets']
+    else
+      @db = conn['snippets']
+    end
   end
 
   get '/' do
@@ -26,7 +30,6 @@ class SnippetApp < Sinatra::Base
 
   post '/create' do
     record = {title: params[:title], code: params[:code], language: params[:language]}
-    puts params
     @db['snippet'].save(record)
     flash[:notice] = "Snippet Saved"
     redirect "/"

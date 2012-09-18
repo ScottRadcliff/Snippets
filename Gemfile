@@ -6,5 +6,10 @@ gem 'rack-flash3'
 gem 'shotgun'
 gem 'coderay'
 gem 'sinatra-partial'
-gem 'rack-test'
-gem 'rspec'
+
+
+group :test do
+  gem 'rack-test'
+  gem 'rspec'
+  gem 'capybara'
+end

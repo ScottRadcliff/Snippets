@@ -1,7 +1,4 @@
-require './code_formatter.rb'
-require 'rspec'
-require 'rack/test'
-
+require "spec_helper"
 describe 'Snippet App' do 
   it "formats text as HTML" do
     html = CodeFormatter.display("something")
