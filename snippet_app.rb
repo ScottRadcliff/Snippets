@@ -25,7 +25,8 @@ class SnippetApp < Sinatra::Base
   end
 
   post '/create' do
-    record = {title: params[:title], code: params[:code]}
+    record = {title: params[:title], code: params[:code], language: params[:language]}
+    puts params
     @db['snippet'].save(record)
     flash[:notice] = "Snippet Saved"
     redirect "/"
